@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: productcompositionservice
+
+server:
+  port: 8080
+
+review:
+  service:
+    url: http://localhost:8082
+
+product:
+  service:
+    url: http://localhost:8081
