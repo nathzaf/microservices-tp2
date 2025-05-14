@@ -12,3 +12,7 @@ review:
 product:
   service:
     url: http://localhost:8081
+
+recommendation:
+  service:
+    url: http://localhost:8083

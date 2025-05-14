@@ -12,4 +12,6 @@ public class ProductComposition {
     private String name;
 
     private Long reviewId;
+
+    private Long recommendationId;
 }
