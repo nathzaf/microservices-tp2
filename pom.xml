@@ -21,6 +21,7 @@
         <module>product-composition-service</module>
         <module>recommendation-service</module>
         <module>discovery-service</module>
+        <module>config-server-service</module>
     </modules>
     <scm>
         <connection/>

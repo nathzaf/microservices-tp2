@@ -1,17 +1,5 @@
 spring:
   application:
     name: recommendation-service
-  datasource:
-    username: sa
-    url: jdbc:h2:mem:testdb
-    driverClassName: org.h2.Driver
-    password: password
-  h2:
-    console:
-      enabled: true
-  jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
-    show-sql: true
-
-server:
-  port: 8083
+  config:
+    import: "optional:configserver:"

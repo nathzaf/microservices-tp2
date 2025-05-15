@@ -1,6 +1,5 @@
 spring:
   application:
     name: product-composition-service
-
-server:
-  port: 8080
+  config:
+    import: "optional:configserver:"

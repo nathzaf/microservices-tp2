@@ -1,0 +1,12 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/nathzaf/microservices-tp2-config
+          default-label: master
