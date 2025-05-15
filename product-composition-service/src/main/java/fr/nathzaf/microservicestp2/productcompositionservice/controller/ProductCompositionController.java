@@ -20,7 +20,7 @@ public class ProductCompositionController {
 
     @GetMapping("product/{productId}")
     public ResponseEntity<ProductComposition> getProductComposition(@PathVariable Long productId) {
-        ProductComposition productComposition = productCompositionService.getProductComposition(productId);
+        ProductComposition productComposition = productCompositionService.createProductComposition(productId);
         return ResponseEntity.ok(productComposition);
     }
 }

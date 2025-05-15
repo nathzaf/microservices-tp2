@@ -28,12 +28,13 @@ public class ReviewController {
     }
 
     @GetMapping("/product/{productId}")
-    public ResponseEntity<ReviewDto> getReviewByProductId(@PathVariable("productId") Long productId) {
-        Review review = reviewService.findByProductId(productId);
-        if (review == null) {
+    public ResponseEntity<List<ReviewDto>> getReviewsByProductId(@PathVariable("productId") Long productId) {
+        List<Review> reviews = reviewService.findByProductId(productId);
+        if (reviews == null) {
             return ResponseEntity.notFound().build();
         }
-        return ResponseEntity.ok(ReviewDto.mapToDTO(review));
+        List<ReviewDto> reviewDtos = reviews.stream().map(ReviewDto::mapToDTO).toList();
+        return ResponseEntity.ok(reviewDtos);
     }
 
     @GetMapping

@@ -4,6 +4,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @Builder
@@ -11,7 +13,7 @@ public class ProductComposition {
 
     private String name;
 
-    private Long reviewId;
+    private List<Long> reviewIds;
 
-    private Long recommendationId;
+    private List<Long> recommendationIds;
 }

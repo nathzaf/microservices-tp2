@@ -4,5 +4,5 @@ import fr.nathzaf.microservicestp2.productcompositionservice.dto.ProductComposit
 
 public interface ProductCompositionService {
 
-    ProductComposition getProductComposition(Long productId);
+    ProductComposition createProductComposition(Long productId);
 }

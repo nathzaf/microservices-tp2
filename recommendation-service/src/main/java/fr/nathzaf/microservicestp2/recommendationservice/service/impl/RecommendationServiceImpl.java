@@ -6,6 +6,8 @@ import fr.nathzaf.microservicestp2.recommendationservice.service.RecommendationS
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class RecommendationServiceImpl implements RecommendationService {
@@ -13,7 +15,7 @@ public class RecommendationServiceImpl implements RecommendationService {
     private final RecommendationRepository recommendationRepository;
 
     @Override
-    public Recommendation getRecommendationByProductId(Long productId) {
+    public List<Recommendation> getRecommendationsByProductId(Long productId) {
         return recommendationRepository.findByProductId(productId);
     }
 

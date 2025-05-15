@@ -12,7 +12,7 @@ public class DataInitializer {
     public DataInitializer(ReviewRepository reviewRepository) {
         reviewRepository.saveAll(List.of(
                 Review.builder().id(21L).productId(1L).author("Nathan").subject("Genial").content("Lorem ipsum").build(),
-                Review.builder().id(25L).productId(2L).author("Kim").subject("Super nul").content("Lorem ipsum").build(),
+                Review.builder().id(25L).productId(1L).author("Kim").subject("Super nul").content("Lorem ipsum").build(),
                 Review.builder().id(26L).productId(3L).author("Arvinde").subject("Nul").content("Lorem ipsum").build()
         ));
     }

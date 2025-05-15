@@ -10,6 +10,8 @@ import fr.nathzaf.microservicestp2.productcompositionservice.dto.ReviewDto;
 import fr.nathzaf.microservicestp2.productcompositionservice.service.ProductCompositionService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ProductCompositionServiceImpl implements ProductCompositionService {
 
@@ -26,17 +28,17 @@ public class ProductCompositionServiceImpl implements ProductCompositionService 
     }
 
     @Override
-    public ProductComposition getProductComposition(Long productId) {
+    public ProductComposition createProductComposition(Long productId) {
         ProductDto product = productClient.getProductById(productId);
 
-        ReviewDto review = reviewClient.getReviewByProductId(productId);
+        List<ReviewDto> reviews = reviewClient.getReviewsByProductId(productId);
 
-        RecommendationDto recommendation = recommendationClient.getRecommendationByProductId(productId);
+        List<RecommendationDto> recommendations = recommendationClient.getRecommendationsByProductId(productId);
 
         return ProductComposition.builder()
                 .name(product.getName())
-                .reviewId(review.getId())
-                .recommendationId(recommendation.id())
+                .reviewIds(reviews.stream().map(ReviewDto::getId).toList())
+                .recommendationIds(recommendations.stream().map(RecommendationDto::id).toList())
                 .build();
     }
 
