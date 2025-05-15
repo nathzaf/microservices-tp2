@@ -1,6 +1,6 @@
 spring:
   application:
-    name: recommendationservice
+    name: recommendation-service
   datasource:
     username: sa
     url: jdbc:h2:mem:testdb

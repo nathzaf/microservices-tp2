@@ -16,16 +16,8 @@ public class RecommendationController {
 
     private final RecommendationService recommendationService;
 
-
-    @GetMapping("/product/{productId}")
-    public ResponseEntity<List<RecommendationDto>> getRecommendationByProductId(@PathVariable Long productId) {
-        List<Recommendation> recommendations = recommendationService.getRecommendationsByProductId(productId);
-        List<RecommendationDto> recommendationDtos = recommendations.stream().map(RecommendationDto::mapToDTO).toList();
-        return ResponseEntity.ok(recommendationDtos);
-    }
-
-    @GetMapping("/product")
-    public ResponseEntity<List<RecommendationDto>> getRecommendationByProductIdRequestParam(@RequestParam("productId") Long productId) {
+    @GetMapping
+    public ResponseEntity<List<RecommendationDto>> getRecommendationByProductId(@RequestParam("productId") Long productId) {
         List<Recommendation> recommendations = recommendationService.getRecommendationsByProductId(productId);
         List<RecommendationDto> recommendationDtos = recommendations.stream().map(RecommendationDto::mapToDTO).toList();
         return ResponseEntity.ok(recommendationDtos);
